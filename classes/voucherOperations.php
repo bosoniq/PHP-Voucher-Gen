@@ -55,9 +55,7 @@ class voucherOperations
 			$generate->createVouchers();
 
 			//	Write them using the chosen method
-			$generate->writeValues();
-
-			return;
+			return $generate->writeValues();
 
 		}
 	}
@@ -180,6 +178,8 @@ class voucherOperations
 		$this->chkEmployee($data['employee']);
 		$this->chkoffer($data['offer']);
 		$this->chkDate($data['date']);
+		$this->chkFlagValues($data['writeto']);
+		$this->chkFlagValues($data['vouchertype']);
 
 		return;
 	}
@@ -246,6 +246,29 @@ class voucherOperations
 		return;
 
 	}
+
+
+	/**
+	 * A simple method to check that a flag value has been supplied from the UI
+	 * @param string $value A flag value selecting a built in option
+	 */
+	private function chkFlagValues($value)
+	{
+
+		if(is_null($value))
+		{
+			throw new Exception("Both a voucher type and write method must be specified.", 1);
+		}
+
+		return;
+	}
+
+
+
+
+
+
+
 
 }
 

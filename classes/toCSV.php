@@ -33,6 +33,7 @@ class toCSV extends writer
 		readfile($tmpName);
 
 		unlink($tmpName);
+		return;
 
 	}
 

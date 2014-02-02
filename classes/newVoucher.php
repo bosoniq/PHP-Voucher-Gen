@@ -105,10 +105,11 @@ Abstract class newVoucher
 	/**
 	 * Use the writeValues() function from the writer object that was passed into the 
 	 * constructor upon newVoucher object instantiation.
+	 * @return  Any values returned from the writer objects method.
 	 */
 	public function writeValues()
 	{
-		$this->writer->writeValues($this->vouchers);
+		return $this->writer->writeValues($this->vouchers);
 	}
 
 
