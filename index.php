@@ -9,6 +9,12 @@
 
 <?php
 
+
+    //  A quick but ugly way of avoiding php errors on the test page.
+    $resultgen ="&nbsp;";
+    $resultred ="&nbsp;";
+
+
 try {
     //  Autoload classes from the ./classes folder
     function __autoload($class_name)
@@ -44,8 +50,6 @@ try {
         $operation = new voucherOperations();
         $resultgen = $operation->processRequest($data);
 
-        //  A quick but ugly way of avoiding php errors on the test page.
-        $resultred ="&nbsp;";
     }
 
 
@@ -64,8 +68,6 @@ try {
         $operation = new voucherOperations();
         $resultred = $operation->processRequest($data);
 
-        //  A quick but ugly way of avoiding php errors on the test page.
-        $resultgen ="&nbsp;";
     }
 
 } catch(Exception $e) {
