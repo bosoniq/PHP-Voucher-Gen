@@ -3,7 +3,7 @@
 /**
 * A class to write data directly to the browser with simple HTML markup included.
 */
-class toScreenWriter extends writer
+class toScreen extends writer
 {
 
     /**

@@ -78,7 +78,7 @@ class voucherOperations
                 break;
 
             case self::SCREEN:
-                return new toScreenWriter();
+                return new toScreen();
                 break;
 
             default:
