@@ -5,32 +5,25 @@
 */
 class toScreenWriter extends writer
 {
-	
 
-	/**
-	 * [writeValues description]
-	 * @param  array $vouchers An array of voucher codes to be written.
-	 * @return string A string formatted in simple HTML.
-	 */
-	public function writeValues($values) {
+    /**
+     * [writeValues description]
+     * @param  array $vouchers An array of voucher codes to be written.
+     * @return string A string formatted in simple HTML.
+     */
+    public function writeValues($values)
+    {
 
-		$count = '';
-		$string = '';
+        $count = '';
+        $string = '';
 
-		foreach ($values as $value) {
-				
-			$count++;
+        foreach ($values as $value) {
+                
+            $count++;
+            $string .= '<p>'.$count.': '.$value.'</p>';
 
-			$string .= '<p>'.$count.': '.$value.'</p>';
+        }
 
-		}
-
-		return $string;
-
-	}
-
-
+        return $string;
+    }
 }
-
-
-?>

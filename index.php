@@ -10,26 +10,22 @@
 <?php
 
 try {
-
-
     //  Autoload classes from the ./classes folder
-    function __autoload($class_name) {
+    function __autoload($class_name)
+    {
         include './classes/'.$class_name . '.php';
     }
 
-
-//////////////////////////////////////////////////////////////////////////////////////////////////
-//Please note that validation and sanitization of data in the example code below is minimal and //
-//that for a live implementation of the voucher classes more stringent checks should be         //
-//implemented.                                                                                  //
-//////////////////////////////////////////////////////////////////////////////////////////////////
-
+    //////////////////////////////////////////////////////////////////////////////////////////////////
+    //Please note that validation and sanitization of data in the example code below is minimal and //
+    //that for a live implementation of the voucher classes more stringent checks should be         //
+    //implemented.                                                                                  //
+    //////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
      * If the generator form is submitted collect the data into an array and process
      */
-    if(isset($_POST['process']) && ($_POST['process'] == 'process'))
-    {
+    if (isset($_POST['process']) && ($_POST['process'] == 'process')) {
         $employee = filter_input(INPUT_POST, 'employee', FILTER_SANITIZE_STRING);
         $offer = filter_input(INPUT_POST, 'offer', FILTER_SANITIZE_STRING);
         $date = filter_input(INPUT_POST, 'date', FILTER_SANITIZE_STRING);
@@ -50,16 +46,14 @@ try {
 
         //  A quick but ugly way of avoiding php errors on the test page.
         $resultred ="&nbsp;";
-
-    } 
+    }
 
 
     /**
      * If the redeemer form is submitted collect the voucher to check and insert into an array 
      * to process.
      */
-    if(isset($_POST['process']) && ($_POST['process'] == 'process2'))
-    {
+    if (isset($_POST['process']) && ($_POST['process'] == 'process2')) {
 
         $redeem =  filter_input(INPUT_POST, 'redeem', FILTER_SANITIZE_STRING);
 
@@ -72,10 +66,11 @@ try {
 
         //  A quick but ugly way of avoiding php errors on the test page.
         $resultgen ="&nbsp;";
-
     }
 
-} catch(Exception $e) { echo '<p>Processing was interrupted with the following error : '.$e->getMessage()."</p>"; }
+} catch(Exception $e) {
+    echo '<p>Processing was interrupted with the following error : '.$e->getMessage()."</p>";
+}
 
 ?>
 

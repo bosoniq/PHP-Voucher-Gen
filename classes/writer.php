@@ -3,15 +3,10 @@
 /**
 * 
 */
-Abstract class writer
+abstract class writer
 {
-	
-
-	/**
-	 * Defined method interface for child classes
-	 */
-	Abstract public function writeValues($vouchers);
-
+    /**
+     * Defined method interface for child classes
+     */
+    abstract public function writeValues($vouchers);
 }
-
-?>
